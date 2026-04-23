@@ -5,7 +5,6 @@ logging.getLogger('matplotlib').setLevel(logging.ERROR)
 
 import matplotlib.pyplot as plt
 
-# Store data
 days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"]
 
 def update_all(event):
@@ -17,7 +16,6 @@ def update_all(event):
         document.getElementById("fri").value
     ]
 
-    # Convert to integers (default = 0 if empty)
     absences = [int(v) if v != "" else 0 for v in values]
 
     show_graph(absences)
@@ -25,7 +23,7 @@ def update_all(event):
 
 
 def show_graph(absences):
-    plt.clf()  # clear previous graph
+    plt.clf() 
 
     x = np.array(days)
     y = np.array(absences)
